@@ -10,7 +10,7 @@ import (
 func main() {
 
 	var wg sync.WaitGroup
-	wg.Add(2)
+	wg.Add(1)
 
 	warrior1 := Warrior{"Arnold Hagss", 35,120,510}
 	monster1 := Monster{"KrakenusX", "Water", 1,12,230,440}
@@ -31,7 +31,7 @@ func main() {
 }
 
 func warriorAttack(warrior *Warrior, monster *Monster)  {
-  time.Sleep(time.Millisecond * 500)
+  time.Sleep(time.Millisecond * 1000)
   for monster.defense > 0 && warrior.defense > 0{
   fmt.Println("Warrior " + warrior.name + " attacked " + monster.name + " !")
   if warrior.attack > monster.defense {
@@ -48,7 +48,7 @@ func warriorAttack(warrior *Warrior, monster *Monster)  {
 }
 
 func monsterAttack(warrior *Warrior, monster *Monster)  {
-	time.Sleep(time.Second*2)
+	time.Sleep(time.Second*1)
 	for warrior.defense > 0 && monster.defense > 0{	
 	fmt.Println("Monster " + monster.name + " attacked " + warrior.name + " !")
 	if monster.attack >= warrior.defense {
