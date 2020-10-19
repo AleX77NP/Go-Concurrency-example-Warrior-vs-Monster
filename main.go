@@ -10,7 +10,7 @@ import (
 func main() {
 
 	var wg sync.WaitGroup
-	wg.Add(1)
+	wg.Add(2)
 
 	warrior1 := Warrior{"Arnold Hagss", 35,120,510}
 	monster1 := Monster{"KrakenusX", "Water", 1,12,230,440}
